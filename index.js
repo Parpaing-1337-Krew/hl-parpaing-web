@@ -22,10 +22,7 @@ async function loadZips() {
   zipModArrayBuffer = arrayBuffers[1];
 
   setStatus("HL-Parpaing ready to launch!")
-  
-  document.getElementById('canvas').classList.remove("hidden");
   document.getElementById("loading").classList.add("hidden");
-
   document.getElementById('start').disabled = false;
 }
 
@@ -38,6 +35,8 @@ function setStatus(text) {
 }
 
 document.getElementById('start').onclick = () => {
+  document.getElementById('canvas').classList.remove("hidden");
+  
   document.getElementById("launch-sound").play();
   document.getElementById('fullscreen').disabled = false;
   document.getElementById('start').disabled = true;
