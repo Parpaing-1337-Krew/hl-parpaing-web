@@ -6,6 +6,6 @@ Mod Half-Life Parpaing, dans votre navigateur. Préservons la légende du moddin
 
 ## Développement
 
-Ce repo dépend sur [hl-engine-js](https://github.com/steren/hl-engine-js/) via un submodule git. Après `git clone`, vous devez donc faire `git submodule init`. 
+Ce repo dépend sur [hl-engine-js](https://github.com/steren/hl-engine-js/) via un submodule git. Après `git clone`, vous devez donc faire `git submodule init && git submodule update`. 
 
 Pour lancer en local, il faut un serveur web. Par exemple `python3 -m http.server` ou `npx serve`.
