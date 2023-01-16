@@ -27,7 +27,9 @@ loadZips();
 
 document.getElementById('fullscreen').onclick = HLEngine.fullscreen
 
-document.getElementById('start').onclick = function() {
+document.getElementById('start').onclick = () => {
+  document.getElementById("launch-sound").play();
+
   HLEngine.start({
     zipValve: zipValveArrayBuffer,
     zipMod: zipModArrayBuffer,
