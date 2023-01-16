@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="MobileOptimized" content="640"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<title>HL-Parpaing</title>
+		<style>
+		  body {
+				font-family: arial;
+				margin: 0;
+				padding: none;
+		  }
+
+			/* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+			#canvas {
+				border: 0px none; 
+				background-color: black;
+				padding-right: 0;
+			}
+
+		  #canvas, #start { 
+				margin-left: auto; 
+				margin-right: auto; 
+				display: block;
+			}
+
+      .hidden {
+        /* display: none; */
+      }
+	
+		</style>
+	</head>
+
+	<body>
+		<canvas class="render hidden" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+
+    <select id="maps">
+      <option value="hlp_building">hlp_building</option>
+      <option value="hlp_cube3D">hlp_cube3D</option>
+      <option value="hlp_dtc">hlp_dtc</option>
+      <option value="hlp_flotagogo">hlp_flotagogo</option>
+      <option value="hlp_fortboyard">hlp_fortboyard</option>
+      <option value="hlp_lepenthouse">hlp_lepenthouse</option>
+      <option value="hlp_moutmoutland">hlp_moutmoutland</option>
+      <option value="hlp_partpaing">hlp_partpaing</option>
+      <option value="hlp_restoroute" selected>hlp_restoroute</option>
+      <option value="hlp_ruinaga">hlp_ruinaga</option>
+      <option value="hlp_sgc">hlp_sgc</option>
+      <option value="hlp_silograin">hlp_silograin</option>
+      <option value="hlp_sncf">hlp_sncf</option>
+      <option value="hlp_trouperdu">hlp_trouperdu</option>
+    </select>
+
+		<input type="button" id="start" value="Launch" disabled/>
+    <input type="button" id="fullscreen" value="Fullscreen" class="hidden"/>
+
+		<script type='text/javascript' src='hl-engine-js/browserfs.min.js'></script>
+		<script type='text/javascript' src='hl-engine-js/lib/hl-engine.js'></script>
+		<script type='text/javascript' src='index.js'></script>
+	</body>
+</html>
