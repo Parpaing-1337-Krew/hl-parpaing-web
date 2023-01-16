@@ -1,6 +1,6 @@
 # Half-Life Parpaing web
 
-Mod Half-Life Parpaing, dans votre navigateur. Préservosn la légende du modding Half-Life pour les siècles à venir!
+Mod Half-Life Parpaing, dans votre navigateur. Préservons la légende du modding Half-Life pour les siècles à venir!
 
 ## [C'est parti](https://parpaing-1337-krew.github.io/hl-parpaing-web/)
 
