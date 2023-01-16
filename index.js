@@ -1,7 +1,9 @@
+import {init, start, fullscreen} from './hl-engine-js/lib/hl-engine.js';
+
 let zipValveArrayBuffer;
 let zipModArrayBuffer;
 
-HLEngine.init({
+init({
   canvas: document.getElementById('canvas'),
   location: 'hl-engine-js/lib',
   setStatus: setStatus,
@@ -28,7 +30,7 @@ async function loadZips() {
 
 loadZips();
 
-document.getElementById('fullscreen').onclick = HLEngine.fullscreen
+document.getElementById('fullscreen').onclick = fullscreen
 
 function setStatus(text) {
   document.getElementById('status').innerHTML = text;
@@ -42,7 +44,7 @@ document.getElementById('start').onclick = () => {
   document.getElementById('start').disabled = true;
   document.getElementById('maps').disabled = true;
 
-  HLEngine.start({
+  start({
     zipValve: zipValveArrayBuffer,
     zipMod: zipModArrayBuffer,
     mod: "Hl-Parpaing",
