@@ -29,6 +29,9 @@ document.getElementById('fullscreen').onclick = HLEngine.fullscreen
 
 document.getElementById('start').onclick = () => {
   document.getElementById("launch-sound").play();
+  document.getElementById('fullscreen').disabled = false;
+  document.getElementById('start').disabled = true;
+  document.getElementById('maps').disabled = true;
 
   HLEngine.start({
     zipValve: zipValveArrayBuffer,
