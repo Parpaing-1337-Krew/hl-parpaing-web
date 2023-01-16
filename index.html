@@ -15,7 +15,9 @@
 				margin: 0;
 				padding: 0;
 				overflow: hidden;
+				display: grid;
 			}
+
 		  body {
 				font-family: arial;
 				margin: 0;
@@ -25,19 +27,20 @@
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: cover;
+				text-align: center;
+				color: white;
 		  }
+
+			#content {
+				margin: auto;
+			}
 
 			/* the canvas *must not* have any border or padding, or mouse coords will be wrong */
 			#canvas {
 				border: 0px none; 
 				background-color: black;
-				padding-right: 0;
-			}
-
-		  #canvas { 
-				margin-left: auto; 
-				margin-right: auto; 
-				display: block;
+				margin: 0;
+				padding: 0;
 			}
 
 			#fullscreen {
@@ -45,37 +48,41 @@
 				top: 0;
 				right: 0;
 			}
-
-			#launcher {
-				text-align: center;
-			}
 	
+			.hidden {
+				display: none !important;
+			}
+
 		</style>
 	</head>
 
 	<body>
-		<canvas class="render hidden" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
-		<input type="button" id="fullscreen" value="Plein écran" disabled/>
+		<div id="content">
+			<canvas class="render hidden" id="canvas" oncontextmenu="event.preventDefault()" class="hidden"></canvas>
+			<input type="button" id="fullscreen" value="Plein écran" disabled/>
 
-		<form id="launcher">
-			<select id="maps">
-				<option value="hlp_building">hlp_building</option>
-				<option value="hlp_cube3D">hlp_cube3D</option>
-				<option value="hlp_dtc">hlp_dtc</option>
-				<option value="hlp_flotagogo">hlp_flotagogo</option>
-				<option value="hlp_fortboyard">hlp_fortboyard</option>
-				<option value="hlp_lepenthouse">hlp_lepenthouse</option>
-				<option value="hlp_moutmoutland">hlp_moutmoutland</option>
-				<option value="hlp_partpaing">hlp_partpaing</option>
-				<option value="hlp_restoroute" selected>hlp_restoroute</option>
-				<option value="hlp_ruinaga">hlp_ruinaga</option>
-				<option value="hlp_sgc">hlp_sgc</option>
-				<option value="hlp_silograin">hlp_silograin</option>
-				<option value="hlp_sncf">hlp_sncf</option>
-				<option value="hlp_trouperdu">hlp_trouperdu</option>
-			</select>
-			<input type="button" id="start" value="C'est parti" disabled/>
-		</form>
+			<form id="launcher">
+				<select id="maps">
+					<option value="hlp_building">hlp_building</option>
+					<option value="hlp_cube3D">hlp_cube3D</option>
+					<option value="hlp_dtc">hlp_dtc</option>
+					<option value="hlp_flotagogo">hlp_flotagogo</option>
+					<option value="hlp_fortboyard">hlp_fortboyard</option>
+					<option value="hlp_lepenthouse">hlp_lepenthouse</option>
+					<option value="hlp_moutmoutland">hlp_moutmoutland</option>
+					<option value="hlp_partpaing">hlp_partpaing</option>
+					<option value="hlp_restoroute" selected>hlp_restoroute</option>
+					<option value="hlp_ruinaga">hlp_ruinaga</option>
+					<option value="hlp_sgc">hlp_sgc</option>
+					<option value="hlp_silograin">hlp_silograin</option>
+					<option value="hlp_sncf">hlp_sncf</option>
+					<option value="hlp_trouperdu">hlp_trouperdu</option>
+				</select>
+				<input type="button" id="start" value="C'est parti" disabled/>
+			</form>
+
+			<p id="loading">Soyez patients, ça charge... (<span id="status"></span>)</p>
+		</div>
 
 		<audio id="launch-sound" src="pp_parti.mp3"></audio>
 

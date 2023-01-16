@@ -3,7 +3,8 @@ let zipModArrayBuffer;
 
 HLEngine.init({
   canvas: document.getElementById('canvas'),
-  location: 'hl-engine-js/lib'
+  location: 'hl-engine-js/lib',
+  setStatus: setStatus,
 });
 
 const zips = [
@@ -20,12 +21,21 @@ async function loadZips() {
   zipValveArrayBuffer = arrayBuffers[0];
   zipModArrayBuffer = arrayBuffers[1];
 
+  setStatus("HL-Parpaing ready to launch!")
+  
+  document.getElementById('canvas').classList.remove("hidden");
+  document.getElementById("loading").classList.add("hidden");
+
   document.getElementById('start').disabled = false;
 }
 
 loadZips();
 
 document.getElementById('fullscreen').onclick = HLEngine.fullscreen
+
+function setStatus(text) {
+  document.getElementById('status').innerHTML = text;
+}
 
 document.getElementById('start').onclick = () => {
   document.getElementById("launch-sound").play();
